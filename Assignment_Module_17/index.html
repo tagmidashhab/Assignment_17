@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager with API Integration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="page-header">
+    <h1>Task Manager</h1>
+    <p>Vanilla JavaScript: async code, DOM rendering and API integration</p>
+  </header>
+
+  <main class="container">
+    <!-- ============ Task 2: Local Todo App ============ -->
+    <section class="card" id="local-section">
+      <h2>My Tasks</h2>
+
+      <form id="todo-form" class="row" autocomplete="off">
+        <input type="text" id="todo-input" placeholder="What needs to be done?" aria-label="New task" />
+        <button type="submit" class="btn primary">Add</button>
+      </form>
+      <p id="form-error" class="error-text" role="alert"></p>
+
+      <div class="stats" id="local-stats">
+        <span>Total: <strong id="stat-total">0</strong></span>
+        <span>Completed: <strong id="stat-completed">0</strong></span>
+        <span>Pending: <strong id="stat-pending">0</strong></span>
+      </div>
+
+      <ul id="todo-list" class="list"></ul>
+    </section>
+
+    <!-- ============ Task 3 + 4: API Todos ============ -->
+    <section class="card" id="api-section">
+      <h2>Todos from API</h2>
+
+      <div class="row toolbar">
+        <button class="btn filter active" data-filter="all">All</button>
+        <button class="btn filter" data-filter="completed">Completed</button>
+        <button class="btn filter" data-filter="pending">Pending</button>
+        <button class="btn secondary" id="refresh-btn">Refresh</button>
+      </div>
+
+      <input type="search" id="search-input" placeholder="Search API todos by title..." aria-label="Search todos" />
+
+      <p id="api-status" class="status" role="status"></p>
+      <p id="api-count" class="muted"></p>
+      <ul id="api-list" class="list"></ul>
+    </section>
+
+    <!-- ============ Task 1: Async Demos ============ -->
+    <section class="card" id="demo-section">
+      <h2>Async JavaScript Demos</h2>
+      <p class="muted">Click the button, then also open the browser console (F12) to see the logs.</p>
+      <button class="btn primary" id="run-demos-btn">Run demos</button>
+      <ol id="demo-output" class="demo-output"></ol>
+    </section>
+  </main>
+
+  <script src="async-demo.js"></script>
+  <script src="local-todos.js"></script>
+  <script src="api-todos.js"></script>
+</body>
+</html>
